@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue模板语法</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{name + ' lee'}}
+        <div v-text="name + ' Lee'"></div>
+        <div v-html="name + 's l'"></div>
+    </div>
+
+    <script>
+        // 生命周期函数就是在每一个时间会自动执行的函数
+        var vm = new Vue({
+            el: "#app",
+            data:{
+                name: "Dell"
+            }
+        })
+    </script>
+</body>
+
+</html>

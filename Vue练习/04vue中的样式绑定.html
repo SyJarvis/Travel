@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue中的样式绑定</title>
+    <script src="./vue.js"></script>
+    <style>
+        .activated{
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <div @click="handleDivClick" :class="{activated: isActivated}">Hello world</div> -->
+        <!-- <div @click="handleDivClick"
+             :class="[activated, activatedOne]">Hello world</div> -->
+            
+    </div>
+
+    <script>
+        // 生命周期函数就是在每一个时间会自动执行的函数
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                activated: '',
+                activatedOne: 'activated-one'
+            },
+            methods:{
+                handleDivClick: function (){
+                    // this.isActivated = !this.isActivated
+                    // // !this.isActivated 取反操作，
+                    if (this.activated === "activated"){
+                        this.activated = "";
+                    }else{
+                        this.activated = "activated";
+                    }
+
+                    // this.activated = this.activated === "activated" ? "" : "activated"
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
